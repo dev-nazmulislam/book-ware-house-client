@@ -1,0 +1,9 @@
+.banner {
+  background-image: url("../../../assets//images/banner.jpg");
+}
+.navbg {
+  background-color: white;
+}
+.navbgfalse {
+  background: none;
+}
