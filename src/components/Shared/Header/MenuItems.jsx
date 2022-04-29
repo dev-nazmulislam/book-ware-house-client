@@ -9,10 +9,10 @@ const MenuItems = () => {
   return (
     <>
       <CustomLink to="/home">Home</CustomLink>
-      <CustomLink to="/services">Services</CustomLink>
-      <CustomLink to="/books">Books</CustomLink>
+      <CustomLink to="/products">Products</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
-      <CustomLink to="/about">About Me</CustomLink>
+      <CustomLink to="/about">About Us</CustomLink>
+      <CustomLink to="/dashboard">Dashboard</CustomLink>
       {user ? (
         <button onClick={() => signOut(auth)} className="border-0 bg-light">
           Logout

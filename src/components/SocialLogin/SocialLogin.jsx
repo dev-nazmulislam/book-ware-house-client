@@ -1,7 +1,6 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF, FaGithub } from "react-icons/fa";
-import auth from "../../firebase.init";
 import {
   useSignInWithFacebook,
   useSignInWithGithub,
@@ -9,6 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading/Loading";
 import { useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebaseInit";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loadding, error] = useSignInWithGoogle(auth);

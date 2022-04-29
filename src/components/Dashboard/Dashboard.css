@@ -1,0 +1,13 @@
+.asid-menu {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 80vh;
+  top: 60px;
+}
+
+@media only screen and (max-width: 765px) {
+  .asid-menu {
+    position: static;
+    height: 100%;
+  }
+}

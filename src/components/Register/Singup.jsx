@@ -5,9 +5,9 @@ import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
 } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
+import auth from "../../firebaseInit";
 
 const Singup = () => {
   const emailRef = useRef("");
