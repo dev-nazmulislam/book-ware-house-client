@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   AiFillHome,
   AiOutlineAreaChart,
@@ -11,14 +11,12 @@ import {
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FiHelpCircle } from "react-icons/fi";
 import "./Dashboard.css";
-import ManageItem from "./ManageItems/ManageItem";
-import AddItems from "./AddItems/AddItems";
 import useBook from "../../Hooks/useBook";
-import UpdateItem from "./UpdateItem/UpdateItem";
 
 const Dashboard = () => {
   const [books] = useBook();
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -35,9 +33,9 @@ const Dashboard = () => {
             </section>
           }
           <input
+            onChange={(e) => navigate(`/dashboard/search/${e.target.value}`)}
             className="rounded-pill text-center mb-2"
             type="search"
-            name=""
             placeholder="Search Item"
           />
           <div className="side-menu rounded px-2">

@@ -38,7 +38,7 @@ const Cart = ({ book }) => {
   return (
     <div className="col-4 mb-2">
       <div className="card p-2">
-        <img className="card-img-top" src={photo} alt={bookName} />
+        <img className="card-img-top w-100" src={photo} alt={bookName} />
         <div className="card-body">
           <h5>{bookName}</h5>
           <div className="d-flex justify-content-between mb-2">

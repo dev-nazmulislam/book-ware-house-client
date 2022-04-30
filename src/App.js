@@ -9,6 +9,7 @@ import Help from "./components/Dashboard/Help/Help";
 import ManageItem from "./components/Dashboard/ManageItems/ManageItem";
 import ManageTeam from "./components/Dashboard/ManageTeam/ManageTeam";
 import ManageUser from "./components/Dashboard/ManageUser/ManageUser";
+import SearchItem from "./components/Dashboard/SearchItem/SearchItem";
 import UpdateItem from "./components/Dashboard/UpdateItem/UpdateItem";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
@@ -28,12 +29,14 @@ function App() {
           <Route path="manageitem" element={<ManageItem />}>
             <Route path=":itemid" element={<UpdateItem />} />
           </Route>
+          <Route path="search/:text" element={<SearchItem />} />
           <Route path="additem" element={<AddItems />} />
           <Route path="user" element={<ManageUser />} />
           <Route path="team" element={<ManageTeam />} />
           <Route path="chart" element={<Chart />} />
           <Route path="help" element={<Help />} />
         </Route>
+        <Route path="/dashboard/search" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Singup />} />
       </Routes>
