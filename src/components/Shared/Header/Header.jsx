@@ -27,7 +27,7 @@ const Header = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        className={`py-3 sticky-top stocl ${navbar ? "navbg" : "navbgfalse"}`}
+        className={`py-3 sticky-top  stocl ${navbar ? "navbg" : "navbgfalse"}`}
       >
         <Container>
           <Link

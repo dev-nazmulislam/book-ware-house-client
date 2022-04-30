@@ -7,14 +7,19 @@ const Cart = ({ book }) => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const [stockQuantity, setStockQuantity] = useState(book.stockQuantity);
-  const { bookName, author, publishar, description, photo, price } = book;
+  const {
+    bookName,
+    stockQuantity,
+    author,
+    publishar,
+    description,
+    photo,
+    price,
+  } = book;
 
   const handleUpdateBook = (id) => {
-    const newQuantity = book.stockQuantity - 1;
-    setStockQuantity(newQuantity);
     const updatedBook = book;
-    updatedBook.stockQuantity = newQuantity;
+    updatedBook.stockQuantity = stockQuantity - 1;
 
     // send data to the server
     const url = `http://localhost:5000/book/${id}`;
@@ -31,7 +36,7 @@ const Cart = ({ book }) => {
       });
   };
   return (
-    <div className="col-4 mb-4">
+    <div className="col-4 mb-2">
       <div className="card p-2">
         <img className="card-img-top" src={photo} alt={bookName} />
         <div className="card-body">
@@ -60,7 +65,16 @@ const Cart = ({ book }) => {
           </div>
         </div>
         <div className="card-footer d-flex justify-content-between">
-          <button className="btn btn-link">Manage Items</button>
+          <button
+            onClick={
+              user
+                ? () => navigate("/dashboard/manageitem")
+                : () => navigate("/login")
+            }
+            className="btn btn-link"
+          >
+            Manage Items
+          </button>
           <button
             onClick={
               user ? () => handleUpdateBook(book._id) : () => navigate("/login")
