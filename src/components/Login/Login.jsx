@@ -16,12 +16,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-
   const [signInWithEmailAndPassword, user, loadding, error] =
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending, error2] =
     useSendPasswordResetEmail(auth);
+
   let element;
   if (error || error2) {
     element = <p className="text-danger">{error?.message}</p>;
@@ -36,7 +36,7 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
-
+  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;

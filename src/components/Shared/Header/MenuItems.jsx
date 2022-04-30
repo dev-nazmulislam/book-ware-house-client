@@ -9,7 +9,7 @@ const MenuItems = () => {
   return (
     <>
       <CustomLink to="/home">Home</CustomLink>
-      <CustomLink to="/allbook">All Book</CustomLink>
+      <CustomLink to="/allbook">My Items</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
       <CustomLink to="/about">About Us</CustomLink>
       <CustomLink to="/dashboard">Dashboard</CustomLink>

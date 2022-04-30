@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import useBook from "../../../Hooks/useBook";
 import Cart from "../../Shared/Cart/Cart";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaPinterestP,
+  FaDribbble,
+} from "react-icons/fa";
 import "./Home.css";
 import serviceOne from "../../../assets/images/ser-1.jpg";
 import serviceTwo from "../../../assets/images/ser-2.jpg";
 import serviceThree from "../../../assets/images/ser-3.jpg";
 import serviceFour from "../../../assets/images/ser-4.jpg";
+import Review from "../../Review/Review";
 
 const Home = () => {
   const [books] = useBook();
   return (
     <div>
+      {/* Inventory section Start hare */}
       <section className="row mx-auto container my-5">
         <h1 className="text-center text-primary">Our Inventory Items</h1>
         {books.slice(0, 6).map((book) => (
@@ -21,6 +29,8 @@ const Home = () => {
           Show all Book
         </Link>
       </section>
+
+      {/* Service section start here (Bonus-1)  */}
       <section className="my-5 container">
         <h2 className="text-center">Services We Provide</h2>
         <p className="text-center">
@@ -28,41 +38,81 @@ const Home = () => {
           supply chain operations and services
         </p>
         <div className="row mx-0">
-          <div className="col-3">
+          <div className="col-3 p-2">
             <img className="w-100" src={serviceOne} alt="" />
             <p className="text-center my-2">
               On-Demand Warehousing Space Services
             </p>
-            <button className="btn btn-link d-block mx-auto text-decoration-none">
-              Read More
-            </button>
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn btn-link text-decoration-none">
+                Read More
+              </button>
+              <span className="d-flex gap-2">
+                <span>Share:</span>
+                <FaFacebookF />
+                <FaTwitter />
+                <FaPinterestP />
+                <FaDribbble />
+              </span>
+            </div>
           </div>
-          <div className="col-3">
+          <div className="col-3 p-2">
             <img className="w-100" src={serviceTwo} alt="" />
             <p className="text-center my-2">
               Kitting, Packing and Other Customized Operation
             </p>
-            <button className="btn btn-link d-block mx-auto text-decoration-none">
-              Read More
-            </button>
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn btn-link text-decoration-none">
+                Read More
+              </button>
+              <span className="d-flex gap-2">
+                <span>Share:</span>
+                <FaFacebookF />
+                <FaTwitter />
+                <FaPinterestP />
+                <FaDribbble />
+              </span>
+            </div>
           </div>
-          <div className="col-3">
+          <div className="col-3 p-2">
             <img className="w-100" src={serviceThree} alt="" />
             <p className="text-center my-2">Value Added Services</p>
-            <button className="btn btn-link d-block mx-auto text-decoration-none">
-              Read More
-            </button>
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn btn-link text-decoration-none">
+                Read More
+              </button>
+              <span className="d-flex gap-2">
+                <span>Share:</span>
+                <FaFacebookF />
+                <FaTwitter />
+                <FaPinterestP />
+                <FaDribbble />
+              </span>
+            </div>
           </div>
-          <div className="col-3">
+          <div className="col-3 p-2">
             <img className="w-100" src={serviceFour} alt="" />
             <p className="text-center my-2">
               Distribution and Reverse Logistics
             </p>
-            <button className="btn btn-link d-block mx-auto text-decoration-none">
-              Read More
-            </button>
+            <div className="d-flex justify-content-between align-items-center">
+              <button className="btn btn-link text-decoration-none">
+                Read More
+              </button>
+              <span className="d-flex gap-2">
+                <span>Share:</span>
+                <FaFacebookF />
+                <FaTwitter />
+                <FaPinterestP />
+                <FaDribbble />
+              </span>
+            </div>
           </div>
         </div>
+      </section>
+      {/* Review section start here (Bonus-2) */}
+      <section>
+        <Review />
       </section>
     </div>
   );

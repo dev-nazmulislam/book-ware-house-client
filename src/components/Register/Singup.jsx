@@ -5,6 +5,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
 } from "react-firebase-hooks/auth";
+import { updateProfile } from "firebase/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
 import auth from "../../firebaseInit";
@@ -52,6 +53,7 @@ const Singup = () => {
       await sendEmailVerification();
       alert(`Verification code sent in ${email} Please Check your Email.`);
       createUserWithEmailAndPassword(email, password);
+
       setError("");
     }
   };

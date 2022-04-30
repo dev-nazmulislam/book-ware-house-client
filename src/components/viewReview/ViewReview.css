@@ -1,0 +1,18 @@
+.comment-profile {
+  width: 70px;
+  height: 80px;
+  background-color: lightgray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment img {
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+}
+.profile-img {
+  width: 60px;
+  height: 70px;
+}
