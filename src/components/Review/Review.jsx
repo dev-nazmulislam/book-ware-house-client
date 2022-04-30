@@ -18,13 +18,13 @@ const Review = () => {
   const description = textField;
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviewCount")
+    fetch("https://mighty-dusk-49836.herokuapp.com/reviewCount")
       .then((res) => res.json())
       .then((data) => setPageCount(Math.ceil(data.count / 3)));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?page=${page}`)
+    fetch(`https://mighty-dusk-49836.herokuapp.com/reviews?page=${page}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [page]);
@@ -34,7 +34,7 @@ const Review = () => {
       navigate("/login");
     } else {
       const review = { name, img, time, description };
-      fetch("http://localhost:5000/review", {
+      fetch("https://mighty-dusk-49836.herokuapp.com/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -19,13 +19,13 @@ const UpdateItem = () => {
   } = book;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/book/${itemid}`)
+    fetch(`https://mighty-dusk-49836.herokuapp.com/book/${itemid}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [itemid]);
 
   const onSubmit = (newBook) => {
-    const url = `http://localhost:5000/bookupdate/${itemid}`;
+    const url = `https://mighty-dusk-49836.herokuapp.com/bookupdate/${itemid}`;
     fetch(url, {
       method: "PUT",
       headers: {

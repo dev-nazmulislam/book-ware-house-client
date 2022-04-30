@@ -16,6 +16,7 @@ import Login from "./components/Login/Login";
 import Singup from "./components/Register/Singup";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
+import RequerAuth from "./components/Shared/RequerAuth/RequerAuth";
 
 function App() {
   return (
@@ -25,7 +26,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/allbook" element={<AllBooks />} />
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequerAuth>
+              <Dashboard />
+            </RequerAuth>
+          }
+        >
           <Route path="manageitem" element={<ManageItem />}>
             <Route path=":itemid" element={<UpdateItem />} />
           </Route>
@@ -36,7 +44,14 @@ function App() {
           <Route path="chart" element={<Chart />} />
           <Route path="help" element={<Help />} />
         </Route>
-        <Route path="/dashboard/search" element={<Dashboard />} />
+        <Route
+          path="/dashboard/search"
+          element={
+            <RequerAuth>
+              <Dashboard />
+            </RequerAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Singup />} />
       </Routes>

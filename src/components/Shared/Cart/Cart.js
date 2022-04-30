@@ -22,7 +22,7 @@ const Cart = ({ book }) => {
     updatedBook.stockQuantity = stockQuantity - 1;
 
     // send data to the server
-    const url = `http://localhost:5000/book/${id}`;
+    const url = `https://mighty-dusk-49836.herokuapp.com/book/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

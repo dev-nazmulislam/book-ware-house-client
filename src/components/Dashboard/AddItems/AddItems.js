@@ -6,7 +6,7 @@ const AddItems = () => {
   const [books, setBooks] = useBook();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/book", {
+    fetch("https://mighty-dusk-49836.herokuapp.com/book", {
       method: "POST",
       headers: {
         "content-type": "application/json",
