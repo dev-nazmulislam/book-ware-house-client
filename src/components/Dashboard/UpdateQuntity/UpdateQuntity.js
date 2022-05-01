@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useBook from "../../../Hooks/useBook";
 import Update from "../Update/Update";
 
 const UpdateQuntity = () => {

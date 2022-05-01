@@ -1,7 +1,4 @@
 import React from "react";
-import banner from "../../assets/images/authentication-2.png";
-import banner2 from "../../assets/images/firebase.png";
-import banner3 from "../../assets/images/service.png";
 import { Nav } from "react-bootstrap";
 
 const Blog = () => {
@@ -9,22 +6,25 @@ const Blog = () => {
     <div className="row mx-0">
       <div className="col-12 col-md-3 asid-menu">
         <Nav.Link className="text-black" href="blog#quizeone">
-          Difference Authentication vs Authorization
+          Difference between javascript and nodejs
         </Nav.Link>
         <hr />
         <Nav.Link className="text-black" href="blog#quizetwo">
-          Why are you using firebase? What other options do you have to
-          implement authentication?
+          When should you use nodejs and when should you use mongodb?
         </Nav.Link>
         <hr />
         <Nav.Link className="text-black" href="blog#quizethree">
-          What other services does firebase provide other than authentication?
+          Differences between sql and nosql databases.
+        </Nav.Link>
+        <hr />
+        <Nav.Link className="text-black" href="blog#quizefour">
+          What is the purpose of jwt and how does it work
         </Nav.Link>
         <hr />
       </div>
       <div className="col-12 col-md-9 px-5">
         <section id="quizeone" className="mb-5">
-          <h1>Difference between Authentication and Authorization</h1>
+          <h1>Difference between javascript and nodejs</h1>
           <p className="d-flex gap-2">
             <span>Author: Md. Nazmul Islam</span>
             <li>Last Updated: 16-04-2022</li>
@@ -38,7 +38,7 @@ const Blog = () => {
             this article, we will discuss what authentication and authorization
             and what is difference about them.
           </p>
-          <img className="w-100" src={banner} alt="" />
+
           <h3>Authentication?</h3>
           <ul>
             <li>
@@ -67,10 +67,7 @@ const Blog = () => {
           </ul>
         </section>
         <section id="quizetwo" className="mb-5">
-          <h1>
-            4 Reasons to using firebase and Other option to implement
-            authentication.
-          </h1>
+          <h1>Batter way to use nodejs and mongodb</h1>
           <p className="d-flex gap-2">
             <span>Author: Md. Nazmul Islam</span>
             <li>Last Updated: 17-04-2022</li>
@@ -81,7 +78,7 @@ const Blog = () => {
             developers to create iOS, Android, and Web apps. Here's why you
             should use it!
           </p>
-          <img className="w-100" src={banner2} alt="" />
+
           <h3>4 Reasons to using firebase</h3>
           <ol>
             <li>Incredibly Built-In Analytics</li>
@@ -120,7 +117,7 @@ const Blog = () => {
           </ul>
         </section>
         <section id="quizethree" className="mb-5">
-          <h1>Firebase All Services without Authentication</h1>
+          <h1>Differences between sql and nosql databases.</h1>
           <p className="d-flex gap-2">
             <span>Author: Md. Nazmul Islam</span>
             <li>Last Updated: 18-04-2022</li>
@@ -131,7 +128,39 @@ const Blog = () => {
             business Like Firebase. Use various Firebase services to set up,
             run, and extend the functionality of your Parojects.
           </p>
-          <img className="w-100" src={banner3} alt="" />
+
+          <h3>
+            There are many services which Firebase provides, Most useful of them
+            are:
+          </h3>
+          <ol>
+            <li>Realtime Database</li>
+            <li>Remote Config</li>
+            <li>Hosting</li>
+            <li>Cloud Messaging</li>
+            <li>Cloud Storage</li>
+            <li>Cloud Functions</li>
+            <li>Authentication</li>
+            <li>Dynamic Links</li>
+          </ol>
+          <p>
+            Firebase is a full package that can help in developing your mobile
+            or web applications faster with fewer resources and more efficiency.
+          </p>
+        </section>
+        <section id="quizefour" className="mb-5">
+          <h1>The purpose of jwt and how does it work</h1>
+          <p className="d-flex gap-2">
+            <span>Author: Md. Nazmul Islam</span>
+            <li>Last Updated: 18-04-2022</li>
+          </p>
+          <hr />
+          <p>
+            Many third-party service providers can help you in growing your
+            business Like Firebase. Use various Firebase services to set up,
+            run, and extend the functionality of your Parojects.
+          </p>
+
           <h3>
             There are many services which Firebase provides, Most useful of them
             are:

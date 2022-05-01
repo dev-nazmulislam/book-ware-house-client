@@ -1,6 +1,6 @@
 import React from "react";
-import profileImg from "../../assets/images/nazmul.png";
 
+import profileImg from "../../assets/images/nazmul.png";
 const About = () => {
   return (
     <div className="container my-5">

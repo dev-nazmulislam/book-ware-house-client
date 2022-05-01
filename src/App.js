@@ -1,7 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import About from "./components/About/About";
 import AllBooks from "./components/AllBooks/AllBooks";
+import Blog from "./components/Blog/Blog";
 import AddItems from "./components/Dashboard/AddItems/AddItems";
 import Chart from "./components/Dashboard/Chart/Chart";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -27,6 +29,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/allbook" element={<AllBooks />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
         <Route
           path="/dashboard"
           element={
