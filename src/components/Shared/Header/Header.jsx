@@ -23,55 +23,59 @@ const Header = () => {
   });
 
   return (
-    <div className="banner">
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        variant="dark"
-        className={`py-3 sticky-top  stocl ${navbar ? "navbg" : "navbgfalse"}`}
-      >
-        <Container>
-          <Link
-            className={`fw-bold fs-4 text-decoration-none ${
-              navbar ? "text-dark" : "text-white"
-            }`}
-            to="/"
-          >
-            Book-house
-          </Link>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto text-center gap-4">
-              <MenuItems />
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      {location.pathname !== "/" &&
-      location.pathname !== "/home" &&
-      location?.pathname.split("/").length !== 4 ? (
-        <section className="py-2">
-          <h1 className="text-light text-center text-uppercase">
-            {location.pathname.substr(1)}
-          </h1>
-          <p className="text-light text-center">
-            <Link className="me-2" to="/">
-              <AiFillHome />
+    <div>
+      <div className="banner">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          variant="dark"
+          className={`py-3 fixed-top  stocl ${navbar ? "navbg" : "navbgfalse"}`}
+        >
+          <Container>
+            <Link
+              className={`fw-bold fs-4 text-decoration-none ${
+                navbar ? "text-dark" : "text-white"
+              }`}
+              to="/"
+            >
+              Book-house
             </Link>
-            {location.pathname}
-          </p>
-        </section>
-      ) : (
-        <section className="py-5">
-          <h1 className="text-light text-center">Welcome to book Warehouse</h1>
-          <p className="text-light text-center">
-            Manage books stock easily & shine your life.
-          </p>
-          <button className="text-light btn btn-primary d-block mx-auto">
-            Learn more
-          </button>
-        </section>
-      )}
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="ms-auto text-center gap-4">
+                <MenuItems />
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        {location.pathname !== "/" &&
+        location.pathname !== "/home" &&
+        location?.pathname.split("/").length !== 4 ? (
+          <section className="py-4">
+            <h1 className="text-light mt-5 text-center text-uppercase">
+              {location.pathname.substr(1)}
+            </h1>
+            <p className="text-light text-center">
+              <Link className="me-2" to="/">
+                <AiFillHome />
+              </Link>
+              {location.pathname}
+            </p>
+          </section>
+        ) : (
+          <section className="py-5">
+            <h1 className="text-light mt-5 text-center">
+              Welcome to book Warehouse
+            </h1>
+            <p className="text-light text-center">
+              Manage books stock easily & shine your life.
+            </p>
+            <button className="text-light btn btn-primary d-block mx-auto">
+              Learn more
+            </button>
+          </section>
+        )}
+      </div>
     </div>
   );
 };
