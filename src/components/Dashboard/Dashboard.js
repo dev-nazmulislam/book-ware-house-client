@@ -9,6 +9,7 @@ import {
   AiOutlineUserAdd,
 } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { GrUpdate } from "react-icons/gr";
 import { FiHelpCircle } from "react-icons/fi";
 import "./Dashboard.css";
 import useBook from "../../Hooks/useBook";
@@ -21,7 +22,7 @@ const Dashboard = () => {
   return (
     <div>
       <section className="row px-0 mx-0">
-        <div className="col-12 col-md-2 shadow asid-menu">
+        <div className="col-12 col-md-3 shadow asid-menu">
           {
             <section className="d-flex p-2 my-2">
               <p>
@@ -34,9 +35,9 @@ const Dashboard = () => {
           }
           <input
             onChange={(e) => navigate(`/dashboard/search/${e.target.value}`)}
-            className="rounded-pill text-center mb-2"
+            className="rounded-pill text-center w-100 mb-2"
             type="search"
-            placeholder="Search Item"
+            placeholder="Search"
           />
           <div className="side-menu rounded px-2">
             <Link
@@ -55,6 +56,16 @@ const Dashboard = () => {
             >
               <p className="me-3 fs-4">{<AiFillFileAdd />}</p>
               <p className="mt-2">Add Items</p>
+              <p className="ms-auto mt-2">{<MdKeyboardArrowRight />}</p>
+            </Link>
+          </div>
+          <div className="side-menu rounded px-2">
+            <Link
+              className="d-flex text-dark align-items-center text-decoration-none"
+              to="/dashboard/quntity"
+            >
+              <p className="me-3 fs-4">{<GrUpdate />}</p>
+              <p className="mt-2">Update Quntity</p>
               <p className="ms-auto mt-2">{<MdKeyboardArrowRight />}</p>
             </Link>
           </div>
@@ -99,10 +110,10 @@ const Dashboard = () => {
             </Link>
           </div>
         </div>
-        <div className="col-12 col-md-10">
-          <section className="container px-4">
+        <div className="col-12 col-md-9">
+          <section className="container px-2">
             <div className="row gx-3 my-4">
-              <div className="col">
+              <div className="col-12 col-md-6 col-lg-3">
                 <div
                   style={{ backgroundColor: "#1FA9D7" }}
                   className="text-light p-3 border rounded shadow"
@@ -111,7 +122,7 @@ const Dashboard = () => {
                   <h4 className="text-center">Products</h4>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-12 col-md-6 col-lg-3">
                 <div
                   style={{ backgroundColor: "#63C2DF" }}
                   className="text-light p-3 border rounded shadow"
@@ -122,7 +133,7 @@ const Dashboard = () => {
                   <h4 className="text-center">Quantity</h4>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-12 col-md-6 col-lg-3">
                 <div
                   style={{ backgroundColor: "#FEC106" }}
                   className="text-light p-3 border rounded shadow"
@@ -136,7 +147,7 @@ const Dashboard = () => {
                   <h4 className="text-center">Price</h4>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-12 col-md-6 col-lg-3">
                 <div
                   style={{ backgroundColor: "#F96C6C" }}
                   className="text-light p-3 border rounded shadow"

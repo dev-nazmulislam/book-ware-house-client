@@ -1,0 +1,14 @@
+.card-container:hover {
+  box-shadow: 2px 2px 5px rgb(73, 72, 72);
+}
+.card-container img {
+  width: 25vh;
+  height: 33vh;
+}
+@media (max-width: 776px) {
+  .card-container img {
+    margin: 0 auto;
+    width: 30vh;
+    height: 37vh;
+  }
+}

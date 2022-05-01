@@ -11,6 +11,7 @@ import ManageTeam from "./components/Dashboard/ManageTeam/ManageTeam";
 import ManageUser from "./components/Dashboard/ManageUser/ManageUser";
 import SearchItem from "./components/Dashboard/SearchItem/SearchItem";
 import UpdateItem from "./components/Dashboard/UpdateItem/UpdateItem";
+import UpdateQuntity from "./components/Dashboard/UpdateQuntity/UpdateQuntity";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
 import Singup from "./components/Register/Singup";
@@ -39,6 +40,7 @@ function App() {
           </Route>
           <Route path="search/:text" element={<SearchItem />} />
           <Route path="additem" element={<AddItems />} />
+          <Route path="quntity" element={<UpdateQuntity />} />
           <Route path="user" element={<ManageUser />} />
           <Route path="team" element={<ManageTeam />} />
           <Route path="chart" element={<Chart />} />
