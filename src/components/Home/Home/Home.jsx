@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div>
       {/* Inventory section Start hare */}
-      <section className="row mx-auto container my-5">
+      <section className="row mx-auto book-container container my-5">
         <h1 className="text-center text-primary">Our Inventory Items</h1>
         {books.slice(0, 6).map((book) => (
           <Cart key={book._id} book={book} />

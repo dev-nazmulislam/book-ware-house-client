@@ -1,5 +1,6 @@
 .banner {
   background-image: url("../../../assets//images/banner.jpg");
+  opacity: 0.8;
 }
 .navbg {
   background-color: white;

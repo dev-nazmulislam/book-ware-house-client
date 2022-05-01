@@ -75,8 +75,9 @@ const Review = () => {
         ))}
       </div>
       <div className="d-flex justify-content-center">
-        {[...Array(pageCount).keys()].map((number) => (
+        {[...Array(pageCount).keys()].map((number, i) => (
           <button
+            key={i}
             onClick={() => setPage(number)}
             className={`me-2 ${
               page === number ? "bg-primary text-light" : "bg-light"
