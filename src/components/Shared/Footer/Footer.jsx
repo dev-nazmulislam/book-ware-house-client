@@ -5,13 +5,14 @@ import { ImLocation2 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import MenuItems from "../Header/MenuItems";
 import SocialConnect from "../SocialConnent/SocialConnect";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="container-fluid bg-light py-5 px-0 mt-5">
+    <footer className="container-fluid fotter-component bg-light py-5 px-0 mt-5">
       <div className="container mx-auto">
-        <div className="row p-3">
-          <div className="col-12 col-md-6 col-lg-4">
+        <div className="row p-2">
+          <div className="col-6 col-lg-4">
             <Link
               to="/"
               className="fw-bold fs-4 text-secondary text-decoration-none"
@@ -32,12 +33,12 @@ const Footer = () => {
             </h6>
             <h6>(Available : Sat - Thu, 10:00 AM to 7:00 PM)</h6>
           </div>
-          <div className=" col-12 col-md-6 col-lg-4 text-center mt-5">
+          <div className=" col-6 col-lg-4 text-center ">
             <MenuItems />
             <SocialConnect />
           </div>
 
-          <div className="d-none d-lg-block col-lg-4 mt-5">
+          <div className="d-none d-lg-block col-lg-4 ">
             <img
               className="img-fluid w-100"
               src="https://web.programming-hero.com/static/media/ssl-commerce.1d268dce.png"

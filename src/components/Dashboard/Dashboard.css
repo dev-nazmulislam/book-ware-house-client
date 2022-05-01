@@ -3,6 +3,7 @@
   position: sticky;
   height: 100vh;
   top: 5px;
+  zoom: 90%;
 }
 .side-menu:hover {
   background-color: lightgray;

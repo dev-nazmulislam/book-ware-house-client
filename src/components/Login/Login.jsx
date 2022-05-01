@@ -9,6 +9,7 @@ import auth from "../../firebaseInit";
 
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import "./Login.css";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -36,7 +37,6 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
-  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
@@ -56,7 +56,7 @@ const Login = () => {
   }
 
   return (
-    <div className="row mx-0">
+    <div className="row mx-0 login-component">
       <div className="col-12 col-md-6 mx-auto my-5 shadow-lg p-5">
         <h1 className="text-primary text-center">Please login</h1>
         <Form onSubmit={handleSubmit}>

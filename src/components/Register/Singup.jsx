@@ -8,6 +8,7 @@ import {
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
 import auth from "../../firebaseInit";
+import "./Singup.css";
 
 const Singup = () => {
   const emailRef = useRef("");
@@ -58,7 +59,7 @@ const Singup = () => {
   };
 
   return (
-    <div className="row mx-0">
+    <div className="row mx-0 singup-component">
       <div className="col-12 col-md-8 col-lg-6 mx-auto my-5 shadow-lg p-5">
         <h1 className="text-primary text-center">Please Register</h1>
         <Form onSubmit={handleSubmit}>

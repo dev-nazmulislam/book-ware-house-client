@@ -42,9 +42,9 @@ function App() {
           <Route path="manageitem" element={<ManageItem />}>
             <Route path=":itemid" element={<UpdateItem />} />
           </Route>
-          <Route path="search/:text" element={<SearchItem />} />
           <Route path="additem" element={<AddItems />} />
           <Route path="quntity" element={<UpdateQuntity />} />
+          <Route path="search/:text" element={<SearchItem />} />
           <Route path="user" element={<ManageUser />} />
           <Route path="team" element={<ManageTeam />} />
           <Route path="chart" element={<Chart />} />

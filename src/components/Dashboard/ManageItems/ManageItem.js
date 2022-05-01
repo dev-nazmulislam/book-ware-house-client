@@ -2,11 +2,11 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import useBook from "../../../Hooks/useBook";
 import { AiFillDelete } from "react-icons/ai";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import "./ManageItems.css";
 
 const ManageItem = () => {
   const [books, setBooks] = useBook();
-  const navigate = useNavigate();
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
@@ -26,14 +26,14 @@ const ManageItem = () => {
   return (
     <section>
       <h2 className="text-primary">All Products</h2>
-      <Table striped bordered hover>
+      <Table className="zoom" striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
             <th>Product Name</th>
-            <th>Author</th>
-            <th>Publishar</th>
-            <th>Quantity</th>
+            <th className="display-hide">Author</th>
+            <th className="display-hide">Publishar</th>
+            <th className="display-hide">Quantity</th>
             <th>Price</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -43,10 +43,10 @@ const ManageItem = () => {
           {books.map((book, i) => (
             <tr key={i}>
               <td>#</td>
-              <td>{book.bookName}</td>
-              <td>{book.author}</td>
-              <td>{book.publishar}</td>
-              <td>{book.stockQuantity}</td>
+              <td className="book-name">{book.bookName}</td>
+              <td className="display-hide">{book.author}</td>
+              <td className="display-hide">{book.publishar}</td>
+              <td className="display-hide">{book.stockQuantity}</td>
               <td>{book.price}</td>
               <td>
                 <Link

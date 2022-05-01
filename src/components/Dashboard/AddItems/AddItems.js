@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useBook from "../../../Hooks/useBook";
+import "./AddItems.css";
 
 const AddItems = () => {
   const [books, setBooks] = useBook();
@@ -22,7 +23,7 @@ const AddItems = () => {
   };
 
   return (
-    <div>
+    <div className="add-items">
       <form className="mx-3 shadow p-3 my-5" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text-primary">Add Books</h1>
         <div className="my-3">

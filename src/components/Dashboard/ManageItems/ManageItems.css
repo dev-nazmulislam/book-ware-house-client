@@ -1,0 +1,11 @@
+.zoom {
+  zoom: 80%;
+}
+@media only screen and (max-width: 765px) {
+  .display-hide {
+    display: none;
+  }
+  .zoom {
+    zoom: 60%;
+  }
+}

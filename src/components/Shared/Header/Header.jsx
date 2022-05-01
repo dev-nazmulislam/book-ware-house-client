@@ -46,7 +46,9 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {location.pathname !== "/" && location.pathname !== "/home" ? (
+      {location.pathname !== "/" &&
+      location.pathname !== "/home" &&
+      location?.pathname.split("/").length !== 4 ? (
         <section className="py-2">
           <h1 className="text-light text-center text-uppercase">
             {location.pathname.substr(1)}

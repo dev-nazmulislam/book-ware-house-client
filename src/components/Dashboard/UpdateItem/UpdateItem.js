@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import "./UpdateItem.css";
 
 const UpdateItem = () => {
   const { itemid } = useParams();
@@ -40,7 +41,7 @@ const UpdateItem = () => {
       });
   };
   return (
-    <div>
+    <div className="update">
       <form className="mx-3 shadow p-3 my-5" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text-primary">Update Product</h1>
         <div className="my-3">

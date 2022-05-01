@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Update from "../Update/Update";
+import "./UpdateQuntity.css";
 
 const UpdateQuntity = () => {
   const [books, setBooks] = useState([]);
   const [searchText, setSearchText] = useState("");
-  console.log(books);
 
   useEffect(() => {
     fetch(
@@ -14,7 +14,7 @@ const UpdateQuntity = () => {
       .then((data) => setBooks(data));
   }, [searchText]);
   return (
-    <div>
+    <div className="update-quntity">
       <h1 className="my-4">Update Quntity</h1>
       <input
         className="w-100 rounded-pill p-2"

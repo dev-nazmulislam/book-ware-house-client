@@ -5,10 +5,10 @@
   width: 25vh;
   height: 33vh;
 }
-@media (max-width: 776px) {
+@media (max-width: 676px) {
   .card-container img {
     margin: 0 auto;
-    width: 30vh;
-    height: 37vh;
+    width: 50vh;
+    height: 60vh;
   }
 }

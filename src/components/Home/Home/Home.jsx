@@ -38,7 +38,7 @@ const Home = () => {
           supply chain operations and services
         </p>
         <div className="row mx-0">
-          <div className="col-3 p-2">
+          <div className="col-12 col-md-6 col-lg-3 p-2">
             <img className="w-100" src={serviceOne} alt="" />
             <p className="text-center my-2">
               On-Demand Warehousing Space Services
@@ -56,7 +56,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="col-3 p-2">
+          <div className="col-12 col-md-6 col-lg-3 p-2">
             <img className="w-100" src={serviceTwo} alt="" />
             <p className="text-center my-2">
               Kitting, Packing and Other Customized Operation
@@ -74,7 +74,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="col-3 p-2">
+          <div className="col-12 col-md-6 col-lg-3 p-2">
             <img className="w-100" src={serviceThree} alt="" />
             <p className="text-center my-2">Value Added Services</p>
             <div className="d-flex justify-content-between align-items-center">
@@ -90,7 +90,7 @@ const Home = () => {
               </span>
             </div>
           </div>
-          <div className="col-3 p-2">
+          <div className="col-12 col-md-6 col-lg-3 p-2">
             <img className="w-100" src={serviceFour} alt="" />
             <p className="text-center my-2">
               Distribution and Reverse Logistics

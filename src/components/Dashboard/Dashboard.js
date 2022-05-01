@@ -30,7 +30,12 @@ const Dashboard = () => {
                   <AiFillHome />
                 </Link>
               </p>
-              <p> {location.pathname}</p>
+              <p>
+                {" "}
+                {location?.pathname.split("/").length !== 4
+                  ? location.pathname
+                  : "/dashboard/manageitem/update"}
+              </p>
             </section>
           }
           <input

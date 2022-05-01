@@ -36,7 +36,7 @@ const Cart = ({ book }) => {
       });
   };
   return (
-    <div className="col-4 mb-2">
+    <div className="col-12 col-md-6 col-lg-4 mb-2">
       <div className="card p-2">
         <img className="card-img-top w-100" src={photo} alt={bookName} />
         <div className="card-body">
