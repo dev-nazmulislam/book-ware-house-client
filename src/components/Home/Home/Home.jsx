@@ -14,21 +14,27 @@ import serviceTwo from "../../../assets/images/ser-2.jpg";
 import serviceThree from "../../../assets/images/ser-3.jpg";
 import serviceFour from "../../../assets/images/ser-4.jpg";
 import Review from "../../Review/Review";
+import Loading from "../../Shared/Loading/Loading";
 
 const Home = () => {
   const [books] = useBook();
+
   return (
     <div>
       {/* Inventory section Start hare */}
-      <section className="row mx-auto book-container container my-5">
-        <h1 className="text-center text-primary">Our Inventory Items</h1>
-        {books.slice(0, 6).map((book) => (
-          <Cart key={book._id} book={book} />
-        ))}
-        <Link className="text-center mb-3" to="/allbook">
-          Show all Book
-        </Link>
-      </section>
+      {books ? (
+        <section className="row mx-auto book-container container my-5">
+          <h1 className="text-center text-primary">Our Inventory Items</h1>
+          {books.slice(0, 6).map((book) => (
+            <Cart key={book._id} book={book} />
+          ))}
+          <Link className="text-center mb-3" to="/allbook">
+            Show all Book
+          </Link>
+        </section>
+      ) : (
+        <Loading />
+      )}
 
       {/* Service section start here (Bonus-1)  */}
       <section className="my-5 container">

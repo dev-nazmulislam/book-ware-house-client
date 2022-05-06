@@ -45,7 +45,7 @@ const Review = () => {
         .then((result) => {
           const newReview = [...reviews, review];
           setReviews(newReview);
-          alert("user Added successfully");
+          alert("Comment successfully");
         });
     }
   };
@@ -70,7 +70,7 @@ const Review = () => {
         <hr />
       </div>
       <div>
-        {reviews.map((review) => (
+        {reviews.reverse().map((review) => (
           <ViewReview key={review._id} review={review} />
         ))}
       </div>

@@ -4,13 +4,19 @@ import useBook from "../../../Hooks/useBook";
 import { AiFillDelete } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
 import "./ManageItems.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebaseInit";
+import useHistory from "../../../Hooks/useHistory";
 
 const ManageItem = () => {
   const [books, setBooks] = useBook();
+  const [histories, setHistories] = useHistory();
+  const [user] = useAuthState(auth);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
+      // Send delete data to server
       const url = `https://mighty-dusk-49836.herokuapp.com/book/${id}`;
       fetch(url, {
         method: "DELETE",
@@ -20,6 +26,29 @@ const ManageItem = () => {
           console.log(data);
           const remaining = books.filter((book) => book._id !== id);
           setBooks(remaining);
+        });
+
+      // Create History Data
+      const deletedBook = books.find((book) => book._id == id);
+
+      const newHistory = {};
+      newHistory.email = user.email;
+      newHistory.bookName = deletedBook.bookName;
+      newHistory.task = "Deleted";
+      newHistory.time = Date().toLocaleString();
+
+      // Post New History Data to server
+      fetch("https://mighty-dusk-49836.herokuapp.com/histories", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newHistory),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          const updatedHistory = [...histories, newHistory];
+          setHistories(updatedHistory);
         });
     }
   };

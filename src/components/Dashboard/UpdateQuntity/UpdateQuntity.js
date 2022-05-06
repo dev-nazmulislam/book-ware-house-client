@@ -13,8 +13,9 @@ const UpdateQuntity = () => {
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, [searchText]);
+
   return (
-    <div className="update-quntity">
+    <div className="update-quntity p-2">
       <h1 className="my-4">Update Quntity</h1>
       <input
         className="w-100 rounded-pill p-2"

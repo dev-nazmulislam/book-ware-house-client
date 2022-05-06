@@ -1,24 +1,55 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../../firebaseInit";
 import useBook from "../../../Hooks/useBook";
+import useHistory from "../../../Hooks/useHistory";
 import "./AddItems.css";
 
 const AddItems = () => {
+  const [histories, setHistories] = useHistory();
   const [books, setBooks] = useBook();
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
+    const newData = data;
+    newData.email = user.email;
+
+    // Post New Data to server
     fetch("https://mighty-dusk-49836.herokuapp.com/book", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(newData),
     })
       .then((res) => res.json())
       .then((result) => {
-        const newBook = [...books, data];
+        const newBook = [...books, newData];
         setBooks(newBook);
         alert("user Added successfully");
+      });
+
+    // Create History Data
+    const newHistory = {};
+    newHistory.email = newData.email;
+    newHistory.bookName = newData.bookName;
+    newHistory.task = "Added";
+    newHistory.time = Date().toLocaleString();
+
+    // Post New History Data to server
+    fetch("https://mighty-dusk-49836.herokuapp.com/histories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newHistory),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        const updatedHistory = [...histories, newHistory];
+        setHistories(updatedHistory);
       });
   };
 

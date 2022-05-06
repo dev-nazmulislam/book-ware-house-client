@@ -31,7 +31,7 @@ const SocialLogin = () => {
     return <Loading />;
   }
 
-  if (user) {
+  if (user || user1 || user2) {
     navigate(from, { replace: true });
   }
 

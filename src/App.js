@@ -8,6 +8,7 @@ import AddItems from "./components/Dashboard/AddItems/AddItems";
 import Chart from "./components/Dashboard/Chart/Chart";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Help from "./components/Dashboard/Help/Help";
+import History from "./components/Dashboard/History/History";
 import ManageItem from "./components/Dashboard/ManageItems/ManageItem";
 import ManageTeam from "./components/Dashboard/ManageTeam/ManageTeam";
 import ManageUser from "./components/Dashboard/ManageUser/ManageUser";
@@ -19,6 +20,7 @@ import Login from "./components/Login/Login";
 import Singup from "./components/Register/Singup";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
+import NotFound from "./components/Shared/NotFound/NotFound";
 import RequerAuth from "./components/Shared/RequerAuth/RequerAuth";
 
 function App() {
@@ -28,22 +30,30 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/allbook" element={<AllBooks />} />
+        <Route
+          path="/allbook"
+          element={
+            <RequerAuth>
+              <AllBooks />
+            </RequerAuth>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route
           path="/dashboard"
           element={
             <RequerAuth>
-              <Dashboard />
+              <Dashboard></Dashboard>
             </RequerAuth>
           }
         >
           <Route path="manageitem" element={<ManageItem />}>
             <Route path=":itemid" element={<UpdateItem />} />
           </Route>
-          <Route path="additem" element={<AddItems />} />
           <Route path="quntity" element={<UpdateQuntity />} />
+          <Route path="additem" element={<AddItems />} />
+          <Route path="history" element={<History />} />
           <Route path="search/:text" element={<SearchItem />} />
           <Route path="user" element={<ManageUser />} />
           <Route path="team" element={<ManageTeam />} />
@@ -60,6 +70,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Singup />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

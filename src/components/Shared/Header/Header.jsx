@@ -28,7 +28,7 @@ const Header = () => {
         <Navbar
           collapseOnSelect
           expand="lg"
-          variant="dark"
+          variant={`${navbar ? "light" : "dark"}`}
           className={`py-3 fixed-top  stocl ${navbar ? "navbg" : "navbgfalse"}`}
         >
           <Container>

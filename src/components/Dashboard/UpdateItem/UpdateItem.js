@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import auth from "../../../firebaseInit";
+import useHistory from "../../../Hooks/useHistory";
 import "./UpdateItem.css";
 
 const UpdateItem = () => {
-  const { itemid } = useParams();
   const [book, setBook] = useState([]);
+  const [histories, setHistories] = useHistory();
+  const [user] = useAuthState(auth);
+  const { itemid } = useParams();
   const { register, handleSubmit } = useForm();
   const {
     bookName,
@@ -38,6 +43,27 @@ const UpdateItem = () => {
       .then((data) => {
         alert("Book Updated successfully!!!");
         // setBook(data);
+      });
+
+    // Create History Data
+    const newHistory = {};
+    newHistory.email = user.email;
+    newHistory.bookName = newBook.bookName;
+    newHistory.task = "Updated";
+    newHistory.time = Date().toLocaleString();
+
+    // Post New History Data to server
+    fetch("https://mighty-dusk-49836.herokuapp.com/histories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newHistory),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        const updatedHistory = [...histories, newHistory];
+        setHistories(updatedHistory);
       });
   };
   return (

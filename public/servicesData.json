@@ -1,6 +1,7 @@
 [
   {
     "bookName": "হাবলুদের জন্য প্রোগ্রামিং",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "প্রোগ্রামিং বেসিক বই",
     "stockQuantity": "500",
@@ -12,6 +13,7 @@
   },
   {
     "bookName": "প্যারাময় লাইফের প্যারাসিটামল",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "ছাত্রজীবন উন্নয়ন",
     "stockQuantity": "500",
@@ -23,6 +25,7 @@
   },
   {
     "bookName": "প্রোগ্রামিংয়ের বলদ টু বস",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "প্রোগ্রামিং বেসিক বই",
     "stockQuantity": "500",
@@ -34,6 +37,7 @@
   },
   {
     "bookName": "প্রোগ্রামিং এর চৌদ্দগোষ্ঠী",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "প্রোগ্রামিং বেসিক বই",
     "stockQuantity": "1000",
@@ -45,6 +49,7 @@
   },
   {
     "bookName": "রিচার্জ ইয়োর ডাউন ব্যাটারি",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "ছাত্রজীবন উন্নয়ন",
     "stockQuantity": "700",
@@ -56,6 +61,7 @@
   },
   {
     "bookName": "প্রোগ্রামিং ও মেশিন লার্নিং",
+    "email": "nazmulislamnr@gmail.com",
     "author": "ঝংকার মাহবুব",
     "catagory": "কম্পিউটার প্রোগ্রামিং",
     "stockQuantity": "600",

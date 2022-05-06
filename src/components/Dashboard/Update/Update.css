@@ -2,13 +2,13 @@
   box-shadow: 2px 2px 5px rgb(73, 72, 72);
 }
 .card-container img {
-  width: 25vh;
-  height: 33vh;
+  width: 35vh;
+  height: 42vh;
 }
 @media (max-width: 676px) {
   .card-container img {
     margin: 0 auto;
     width: 50vh;
-    height: 60vh;
+    height: 65vh;
   }
 }

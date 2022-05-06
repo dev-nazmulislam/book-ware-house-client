@@ -7,6 +7,7 @@ import {
   AiFillFileAdd,
   AiOutlineUsergroupAdd,
   AiOutlineUserAdd,
+  AiOutlineHistory,
 } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
@@ -54,6 +55,17 @@ const Dashboard = () => {
               <p className="ms-auto mt-2">{<MdKeyboardArrowRight />}</p>
             </Link>
           </div>
+
+          <div className="side-menu rounded px-2">
+            <Link
+              className="d-flex text-dark align-items-center text-decoration-none"
+              to="/dashboard/quntity"
+            >
+              <p className="me-3 fs-4">{<GrUpdate />}</p>
+              <p className="mt-2">Update Quntity & Price</p>
+              <p className="ms-auto mt-2">{<MdKeyboardArrowRight />}</p>
+            </Link>
+          </div>
           <div className="side-menu rounded px-2">
             <Link
               className="d-flex text-dark align-items-center text-decoration-none"
@@ -67,10 +79,10 @@ const Dashboard = () => {
           <div className="side-menu rounded px-2">
             <Link
               className="d-flex text-dark align-items-center text-decoration-none"
-              to="/dashboard/quntity"
+              to="/dashboard/history"
             >
-              <p className="me-3 fs-4">{<GrUpdate />}</p>
-              <p className="mt-2">Update Quntity</p>
+              <p className="me-3 fs-4">{<AiOutlineHistory />}</p>
+              <p className="mt-2">Hstory Log</p>
               <p className="ms-auto mt-2">{<MdKeyboardArrowRight />}</p>
             </Link>
           </div>
