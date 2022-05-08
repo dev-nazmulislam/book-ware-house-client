@@ -70,7 +70,7 @@ const Review = () => {
         <hr />
       </div>
       <div>
-        {reviews.reverse().map((review) => (
+        {reviews.map((review) => (
           <ViewReview key={review._id} review={review} />
         ))}
       </div>
