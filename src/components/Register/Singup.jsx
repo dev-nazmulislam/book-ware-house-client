@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
-  useSendEmailVerification,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
@@ -11,6 +11,7 @@ import auth from "../../firebase.Init";
 import "./Singup.css";
 
 const Singup = () => {
+  const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
@@ -21,12 +22,10 @@ const Singup = () => {
   let from = location.state?.from?.pathname || "/";
 
   const [createUserWithEmailAndPassword, user, loading, error2] =
-    useCreateUserWithEmailAndPassword(auth);
-
-  const [sendEmailVerification, sending, error3] =
-    useSendEmailVerification(auth);
-
-  if (loading || sending) {
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  console.log(user);
+  if (loading || updating) {
     return <Loading />;
   }
 
@@ -36,11 +35,7 @@ const Singup = () => {
   } else {
     element = "";
   }
-  if (error3) {
-    element = <p className="text-danger">{error3}</p>;
-  } else {
-    element = "";
-  }
+
   if (error) {
     element = <p className="text-danger">{error}</p>;
   } else {
@@ -53,6 +48,7 @@ const Singup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
@@ -60,10 +56,9 @@ const Singup = () => {
     if (password !== confirmPassword) {
       return setError("Password Do not match");
     } else {
-      await sendEmailVerification();
       alert(`Verification code sent in ${email} Please Check your Email.`);
-      createUserWithEmailAndPassword(email, password);
-
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName: name });
       setError("");
     }
   };
@@ -73,6 +68,15 @@ const Singup = () => {
       <div className="col-12 col-md-8 col-lg-6 mx-auto my-5 shadow-lg p-5">
         <h1 className="text-primary text-center">Please Register</h1>
         <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              ref={nameRef}
+              type="text"
+              placeholder="Enter your Name"
+              required
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
