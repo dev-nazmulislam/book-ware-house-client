@@ -9,6 +9,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
 import auth from "../../firebase.Init";
 import "./Singup.css";
+import useHistory from "../../Hooks/useHistory";
 
 const Singup = () => {
   const nameRef = useRef("");
@@ -16,6 +17,7 @@ const Singup = () => {
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
   const [error, setError] = useState("");
+  const [histories, setHistories] = useHistory();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,8 +25,7 @@ const Singup = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error2] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  console.log(user);
+  const [updateProfile, updating] = useUpdateProfile(auth);
   if (loading || updating) {
     return <Loading />;
   }
@@ -61,6 +62,26 @@ const Singup = () => {
       await updateProfile({ displayName: name });
       setError("");
     }
+    // Create History Data
+    const newHistory = {};
+    newHistory.email = user?.email;
+    newHistory.bookName = user?.displayName;
+    newHistory.task = "Singup";
+    newHistory.time = Date().toLocaleString();
+
+    // Post New History Data to server
+    fetch("https://mighty-dusk-49836.herokuapp.com/histories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newHistory),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        const updatedHistory = [...histories, newHistory];
+        setHistories(updatedHistory);
+      });
   };
 
   return (

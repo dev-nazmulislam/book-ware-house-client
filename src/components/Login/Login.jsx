@@ -6,12 +6,14 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.Init";
+import useHistory from "../../Hooks/useHistory";
 
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
 const Login = () => {
+  const [histories, setHistories] = useHistory();
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
@@ -47,6 +49,27 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
+
+    // Create History Data
+    const newHistory = {};
+    newHistory.email = user?.email;
+    newHistory.bookName = user?.displayName;
+    newHistory.task = "Login";
+    newHistory.time = Date().toLocaleString();
+
+    // Post New History Data to server
+    fetch("https://mighty-dusk-49836.herokuapp.com/histories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newHistory),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        const updatedHistory = [...histories, newHistory];
+        setHistories(updatedHistory);
+      });
   };
 
   async function handlePasswordReset() {
