@@ -68,8 +68,8 @@ const Singup = () => {
       <div className="col-12 col-md-8 col-lg-6 mx-auto my-5 shadow-lg p-5">
         <h1 className="text-primary text-center">Please Register</h1>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
             <Form.Control
               ref={nameRef}
               type="text"
@@ -82,7 +82,7 @@ const Singup = () => {
             <Form.Control
               ref={emailRef}
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter Your email"
               required
             />
             <Form.Text className="text-muted">
