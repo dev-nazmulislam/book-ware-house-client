@@ -7,7 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
-import auth from "../../firebaseInit";
+import auth from "../../firebase.Init";
 import "./Singup.css";
 
 const Singup = () => {
@@ -31,7 +31,17 @@ const Singup = () => {
   }
 
   let element;
-  if (error || error2 || error3) {
+  if (error2) {
+    element = <p className="text-danger">{error2}</p>;
+  } else {
+    element = "";
+  }
+  if (error3) {
+    element = <p className="text-danger">{error3}</p>;
+  } else {
+    element = "";
+  }
+  if (error) {
     element = <p className="text-danger">{error}</p>;
   } else {
     element = "";

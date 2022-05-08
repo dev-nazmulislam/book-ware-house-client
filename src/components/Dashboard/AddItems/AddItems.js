@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import auth from "../../../firebaseInit";
+import auth from "../../../firebase.Init";
 import useBook from "../../../Hooks/useBook";
 import useHistory from "../../../Hooks/useHistory";
 import "./AddItems.css";
@@ -28,7 +28,7 @@ const AddItems = () => {
       .then((result) => {
         const newBook = [...books, newData];
         setBooks(newBook);
-        alert("user Added successfully");
+        alert("Item Added successfully");
       });
 
     // Create History Data

@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import auth from "../../firebaseInit";
+import auth from "../../firebase.Init";
 import useHistory from "../../Hooks/useHistory";
 import { AiFillDelete } from "react-icons/ai";
 import useBook from "../../Hooks/useBook";
@@ -23,7 +23,7 @@ const ShowBook = ({ book }) => {
   } = book;
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure?");
+    const proceed = window.confirm("Are you sure to delete?");
     if (proceed) {
       // Send delete data to server
       const url = `https://mighty-dusk-49836.herokuapp.com/book/${id}`;

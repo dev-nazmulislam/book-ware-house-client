@@ -5,7 +5,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import auth from "../../firebaseInit";
+import auth from "../../firebase.Init";
 
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -24,8 +24,13 @@ const Login = () => {
     useSendPasswordResetEmail(auth);
 
   let element;
-  if (error || error2) {
+  if (error) {
     element = <p className="text-danger">{error?.message}</p>;
+  } else {
+    element = "";
+  }
+  if (error2) {
+    element = <p className="text-danger">{error2?.message}</p>;
   } else {
     element = "";
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebaseInit";
+import auth from "../../firebase.Init";
 import ShowBook from "../ShowBook/ShowBook";
 
 const AllBooks = () => {

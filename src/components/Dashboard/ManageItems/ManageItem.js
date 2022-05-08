@@ -5,7 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
 import "./ManageItems.css";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../../firebaseInit";
+import auth from "../../../firebase.Init";
 import useHistory from "../../../Hooks/useHistory";
 
 const ManageItem = () => {

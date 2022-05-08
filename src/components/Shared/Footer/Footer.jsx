@@ -17,7 +17,7 @@ const Footer = () => {
               to="/"
               className="fw-bold fs-4 text-secondary text-decoration-none"
             >
-              Elite Photographer
+              Book House
             </Link>
             <h6 className="d-flex align-items-center gap-3 mt-3">
               <ImLocation2 />
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <div className="mx-auto mt-4 p-3">
         <div className="text-center text-blue-700 pt-12 font-normal flex items-center justify-center">
-          All Rights Reserved By &copy; Elite Photographer 2022
+          All Rights Reserved By &copy; Book House 2022
         </div>
       </div>
     </footer>

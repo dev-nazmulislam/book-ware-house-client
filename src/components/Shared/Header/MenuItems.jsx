@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../../firebaseInit";
+import auth from "../../../firebase.Init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const MenuItems = () => {

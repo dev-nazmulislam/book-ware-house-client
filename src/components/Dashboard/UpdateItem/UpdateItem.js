@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import auth from "../../../firebaseInit";
+import auth from "../../../firebase.Init";
 import useHistory from "../../../Hooks/useHistory";
 import "./UpdateItem.css";
 
