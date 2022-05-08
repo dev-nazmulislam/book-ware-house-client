@@ -2,7 +2,6 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF, FaGithub } from "react-icons/fa";
 import {
-  useSignInWithFacebook,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -12,8 +11,6 @@ import auth from "../../firebaseInit";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loadding, error] = useSignInWithGoogle(auth);
-  const [signInWithFacebook, user1, loadding1, error1] =
-    useSignInWithFacebook(auth);
   const [signInWithGithub, user2, loadding2, error2] =
     useSignInWithGithub(auth);
   const navigate = useNavigate();
@@ -21,17 +18,17 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
 
   let element;
-  if (error || error1 || error2) {
+  if (error || error2) {
     element = <p className="text-danger">{error?.message}</p>;
   } else {
     element = "";
   }
 
-  if (loadding || loadding1 || loadding2) {
+  if (loadding || loadding2) {
     return <Loading />;
   }
 
-  if (user || user1 || user2) {
+  if (user || user2) {
     navigate(from, { replace: true });
   }
 
@@ -50,13 +47,6 @@ const SocialLogin = () => {
         >
           <FcGoogle className="mx-3" />
           Google Login
-        </button>
-        <button
-          onClick={() => signInWithFacebook()}
-          className="btn btn-primary border rounded fs-4 w-100  my-2"
-        >
-          <FaFacebookF className="mx-3" />
-          Facebook Login
         </button>
         <button
           onClick={() => signInWithGithub()}
